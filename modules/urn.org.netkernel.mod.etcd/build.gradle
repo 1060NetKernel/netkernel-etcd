@@ -1,0 +1,27 @@
+apply plugin: 'netkernel'
+
+//Provide this buildscript with repositories and dependencies to obtain the netkernel plugin
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven {
+            url "http://maven.netkernel.org/netkernel-maven"
+        }
+    }
+
+    dependencies {
+        classpath group: 'urn.org.netkernel', name: 'gradle.plugin', version: '1.1.21'
+    }
+}
+
+netkernel {
+    useMavenCentral()
+    useMavenNK()
+    useStandardCompileDependencies()
+}
+
+dependencies {
+        runtime 'com.coreos:jetcd-core:0.0.2'
+        compile 'com.coreos:jetcd-core:0.0.2'
+    }

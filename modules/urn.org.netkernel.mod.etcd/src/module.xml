@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="2.0">
+	<meta>
+		<identity>
+			<uri>urn:org:netkernel:mod:etcd</uri>
+			<version>0.1.0</version>
+		</identity>
+		<info>
+			<name>NetKernel etcd integration</name>
+			<description>Module to integrate etcd using coreos/jetcd</description>
+		</info>
+	</meta>
+	<rootspace>
+		<accessor>
+			<class>org.netkernel.mod.etcd.ETCDAccessor</class>
+			<grammar>etcd:<group name="path">/<regex type="anything"/></group></grammar>
+		</accessor>
+	</rootspace>
+</module>
