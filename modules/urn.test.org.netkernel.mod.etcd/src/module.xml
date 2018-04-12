@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="2.0">
+	<meta>
+		<identity>
+			<uri>urn:test:org:netkernel:mod:etcd</uri>
+			<version>1.0.0</version>
+		</identity>
+		<info>
+			<name>Test / ETCD</name>
+			<description>Tests for etcd</description>
+		</info>
+	</meta>
+	<system>
+		<dynamic/>
+	</system>
+	
+	<rootspace>
+		<fileset>
+			<regex>res:/etc/system/Tests.xml</regex>
+		</fileset>
+		<fileset>
+			<regex>res:/test/.*</regex>
+		</fileset>
+		
+		<endpoint>
+			<prototype>Limiter</prototype>
+			<grammar>res:/etc/<regex type="anything"/></grammar>
+		</endpoint>
+		<import>
+			<uri>urn:org:netkernel:mod:etcd</uri>
+		</import>
+		<import>
+			<uri>urn:org:netkernel:ext:layer1</uri>
+			<private/>
+		</import>
+		<import>
+			<uri>urn:org:netkernel:xml:core</uri>
+			<private/>
+		</import>
+	</rootspace>
+
+</module>

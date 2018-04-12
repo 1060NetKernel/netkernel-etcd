@@ -3,12 +3,9 @@ package org.netkernel.mod.etcd;
 import org.netkernel.layer0.nkf.INKFRequestContext;
 import org.netkernel.layer0.nkf.INKFResponse;
 import org.netkernel.layer0.nkf.NKFException;
-import org.netkernel.layer0.representation.IReadableBinaryStreamRepresentation;
 import org.netkernel.module.standard.endpoint.StandardAccessorImpl;
 
 import com.coreos.jetcd.Client;
-import com.coreos.jetcd.ClientBuilder;
-import com.coreos.jetcd.api.KeyValue;
 import com.coreos.jetcd.data.ByteSequence;
 import com.coreos.jetcd.kv.DeleteResponse;
 import com.coreos.jetcd.kv.GetResponse;
@@ -98,6 +95,5 @@ public class ETCDAccessor extends StandardAccessorImpl
 		
 		boolean result=!getResponse.getKvs().isEmpty();
 		aContext.createResponseFrom(result).setExpiry(INKFResponse.EXPIRY_ALWAYS);
-
 	}
 }

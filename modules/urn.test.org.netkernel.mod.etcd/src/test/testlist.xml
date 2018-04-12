@@ -1,0 +1,50 @@
+<testlist>
+	<!--<import>res:/org/netkernel/xml/assert/assertLibrary.xml</import> -->
+
+	<test name="etcd delete">
+		<request>
+			<verb>DELETE</verb>
+			<identifier>etcd:/test</identifier>
+		</request>
+		<assert>
+		</assert>
+	</test>
+	<test name="etcd exists">
+		<request>
+			<verb>EXISTS</verb>
+			<identifier>etcd:/test</identifier>
+		</request>
+		<assert>
+			<false />
+		</assert>
+	</test>
+	<test name="etcd sink">
+		<request>
+			<verb>SINK</verb>
+			<identifier>etcd:/test</identifier>
+			<argument name="primary"><literal type="string">Hello</literal></argument>
+		</request>
+		<assert>
+			<null />
+		</assert>
+	</test>
+	<test name="etcd source">
+		<request>
+			<verb>SOURCE</verb>
+			<identifier>etcd:/test</identifier>
+			
+		</request>
+		<assert>
+			<stringEquals>Hello</stringEquals>
+		</assert>
+	</test>
+	<test name="etcd exists2">
+		<request>
+			<verb>EXISTS</verb>
+			<identifier>etcd:/test</identifier>
+		</request>
+		<assert>
+			<true />
+		</assert>
+	</test>
+</testlist>
