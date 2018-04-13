@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="2.0">
+	<meta>
+		<identity>
+			<uri>urn:org:netkernel:mod:kubernetes:api</uri>
+			<version>0.1.0</version>
+		</identity>
+		<info>
+			<name>NetKernel Kubernetes API</name>
+			<description>Module to integrate Kubernetes API using official Java client</description>
+		</info>
+	</meta>
+	<rootspace>
+		<accessor>
+			<class>org.netkernel.mod.kubernetes.api.KubernetesAPIAccessor</class>
+			<grammar>active:kubernetes</grammar>
+		</accessor>
+		<import>
+			<uri>urn:org:netkernel:mod:hds</uri>
+		</import>
+	</rootspace>
+</module>
